@@ -1,66 +1,43 @@
-from logging import config
+
 import os
-import sys
-import traceback
-from venv import logger
-import discord
-from discord.ext import commands
+import random
 from dotenv import load_dotenv
 
-# Environment variables
+import discord
+from discord.ext import commands
+
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
+intents.message_content = True
 
-# class NonoBot(commands.Bot):
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
+bot = commands.Bot(command_prefix="!", intents=intents)
 
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
     
-#     async def on_ready(self):
-#         print(f'{self.user} has connected to Discord!')
-#         for filename in os.listdir('./cogs'):
-#             if filename.endswith('.py'):
-#                 cog_name = f'cogs.{filename[:-3]}'
-#                 try:
-#                     self.load_extension(cog_name)
-#                     print(f'{cog_name} successfully loaded')
-#                 except Exception as e:
-#                     print(f'{cog_name} failed to load.', file=sys.stderr)
-#                     traceback.print_exc()
 
+    questions = ["do", "does", "am", "will", "is", "are", "can", "have", "should", "would", "could", "did", "shall"]
+    answers = ["Yes", "No", "For sure", "Perchance", "Perhaps", "Perhaps not", "Definitely not", "Nope", "Maybe", "Without a doubt", "Absolutely!", "Not a chance", "You bet!", "Never in a million years", "It's possible", "In your dreams", "Affirmative", "Negative", "Signs point to yes", "Don't count on it", "Ask again later", "My sources say no", "Outlook not so good", "Yes, but keep it quiet", "No, but nice try", "I can't say for sure", "Possibly", "Unlikely", "Very doubtful", "Absolutely not", "Yes, and it's amazing!", "No, but maybe later", "For sure, but don't tell anyone", "No way, Jose", "I'd say yes", "I'd say no", "Chances are slim", "It's a secret", "Most likely", "You wish", "As if", "Definitely yes", "Definitely maybe"]
 
-# bot = NonoBot(command_prefix="!", intents=intents)
-# bot.run(TOKEN)
+    for question in questions:
+        if message.content.startswith(question):
+            answer = random.choice(answers)
+            await message.channel.send(answer)
 
+    await bot.process_commands(message)
 
+@bot.command(name="hi")
+async def on_help(ctx):
+    await ctx.send("What would you like help with?")
 
-class DiscordBot(commands.Bot):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.logger = logger
-        self.config = config
+bot.load_extension("cogs.test")
 
-
-    async def load_cogs(self):
-        """
-        The code in this function is executed whenever the bot will start.
-        """
-        for file in os.listdir(f"{os.path.realpath(os.path.dirname(__file__))}/cogs"):
-            if file.endswith(".py"):
-                extension = file[:-3]
-                try:
-                    await self.load_extension(f"cogs.{extension}")
-                    self.logger.info(f"Loaded extension '{extension}'")
-                except Exception as e:
-                    exception = f"{type(e).__name__}: {e}"
-                    self.logger.error(
-                        f"Failed to load extension {extension}\n{exception}"
-                    )
-
-
-
-
-bot = DiscordBot(command_prefix="!", intents=intents)
 bot.run(TOKEN)
