@@ -21,6 +21,7 @@ possibly add a point system?? maybe idk
 class GuessThatCharacter(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        super().__init__()
 
         #load character from JSON file
         with open('data/characters.json', 'r') as f:
@@ -36,5 +37,5 @@ class GuessThatCharacter(commands.Cog):
         await ctx.send(image)
 
 
-def setup(bot):
-    bot.add_cog(GuessThatCharacter(bot))
+async def setup(bot):
+    await bot.add_cog(GuessThatCharacter(bot))
