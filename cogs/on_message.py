@@ -8,9 +8,12 @@ from discord.ext import commands
     Bot responses to messages in chat
 
 """
+with open("data/yes_no_questions.json") as json_file:
+            questions = json.load(json_file)
+        
+with open("data/yes_no_answers.json") as json_file:
+            answers = json.load(json_file)
 
-
-print("test.py")
 class On_Message(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -19,16 +22,10 @@ class On_Message(commands.Cog):
     # Write Functions here
     @commands.Cog.listener()
     async def on_message(self, message):
-        
-        with open("yes_no_questions.json") as json_file:
-            questions = json.load(json_file)
-        
-        with open("yes_no_anwers.json") as json_file:
-            answers = json.load(json_file)
 
         if message.author == self.bot.user:
             return
-        
+
 
         for question in questions:
             if message.content.startswith(question):
