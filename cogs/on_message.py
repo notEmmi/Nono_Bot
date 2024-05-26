@@ -1,5 +1,4 @@
 
-import json
 import random
 from discord.ext import commands
 
@@ -8,11 +7,7 @@ from discord.ext import commands
     Bot responses to messages in chat
 
 """
-with open("data/yes_no_questions.json") as json_file:
-            questions = json.load(json_file)
-        
-with open("data/yes_no_answers.json") as json_file:
-            answers = json.load(json_file)
+
 
 class On_Message(commands.Cog):
     def __init__(self, bot):
@@ -21,7 +16,9 @@ class On_Message(commands.Cog):
 
     # Write Functions here
     @commands.Cog.listener()
-    async def on_message(self, message):
+    async def on_question(self, message):
+        questions = ["do", "does", "am", "will", "is", "are", "can", "have", "should", "would", "could", "did", "shall"]
+        answers = ["Yes", "No", "For sure", "Perchance", "Perhaps", "Perhaps not", "Definitely not", "Nope", "Maybe", "Without a doubt", "Absolutely!", "Not a chance", "You bet!", "Never in a million years", "It's possible", "In your dreams", "Affirmative", "Negative", "Signs point to yes", "Don't count on it", "Ask again later", "My sources say no", "Outlook not so good", "Yes, but keep it quiet", "No, but nice try", "I can't say for sure", "Possibly", "Unlikely", "Very doubtful", "Absolutely not", "Yes, and it's amazing!", "No, but maybe later", "For sure, but don't tell anyone", "No way, Jose", "I'd say yes", "I'd say no", "Chances are slim", "It's a secret", "Most likely", "You wish", "As if", "Definitely yes", "Definitely maybe"]
 
         if message.author == self.bot.user:
             return
@@ -32,6 +29,9 @@ class On_Message(commands.Cog):
                 answer = random.choice(answers)
                 await message.channel.send(answer)
                 break
+
+    @commands.Cog.listener()
+    async def on_greetings()
 
     @commands.command(name="hello")
     async def on_hello(self, ctx):
