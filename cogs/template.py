@@ -15,6 +15,5 @@ class Template(commands.Cog):
 
     # Write Functions here
 
-
 async def setup(bot):
     await bot.add_cog(Template(bot))
