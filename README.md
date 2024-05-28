@@ -1,10 +1,10 @@
 # Nono Discord Bot
 
-This is my first Discord bot. The purpose of the bot is to have multiple mini games and some basic commands, as well as interact with messages such as answering questions, issuing warnings for curse words, and responding to greetings and goodbyes.
+This is my first Discord bot. The purpose of the bot is to have multiple mini-games and some basic commands, as well as interact with messages such as answering questions, issuing warnings for curse words, and responding to greetings and goodbyes.
 **Remember, this is still in work.**
 
 ## Basic Commands
-
+**work in progress**
 1. **!help** - Provides a list of available commands.
 2. **!ping** - Checks the bot's latency.
 3. **!info** - Provides information about the bot.
@@ -12,11 +12,11 @@ This is my first Discord bot. The purpose of the bot is to have multiple mini ga
 
 ## Mini Games
 
-1. **!truthordare** - 
-2. **!guessthatcharacter** - Try to guess the character from the image.
-3. **!trivia** - Answer trivia questions and earn points.
-4. **!rps** - Play Rock, Paper, Scissors with the bot.
-5. **!numberguess** - Try to guess the number the bot is thinking of.
+1. **!truthordare** - not started
+2. **!guessthatcharacter** - **work in progress**
+3. **!trivia** - not started
+4. **!rps** - not started
+5. **!numberguess** - not started
 
 ### Future Plans
 
