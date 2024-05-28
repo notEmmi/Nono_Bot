@@ -14,8 +14,10 @@ class Basic_Commands(commands.Cog):
         super().__init__()
 
     # Write Functions here
-    @commands.hybrid_commands(name="games")
-    async def games():
+    @commands.command()
+    async def games(self, ctx):
+        pass
+    
         
 
 

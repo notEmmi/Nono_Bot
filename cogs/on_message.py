@@ -17,16 +17,16 @@ class On_Message(commands.Cog):
 
         data = {
             "questions": {
-                "triggers": {"do", "does", "am", "will", "is", "are", "can", "have", "should", "would", "could", "did", "shall"},
+                "triggers": {"do ", "does ", "am ", "will ", "is ", "are ", "can ", "have ", "should ", "would ", "could ", "did ", "shall "},
                 "responses": ["Yes", "No", "For sure", "Perchance", "Perhaps", "Perhaps not", "Definitely not", "Nope", "Maybe", "Without a doubt", "Absolutely!", "Not a chance", "You bet!", "Never in a million years", "It's possible", "In your dreams", "Affirmative", "Negative", "Signs point to yes", "Don't count on it", "Ask again later", "My sources say no", "Outlook not so good", "Yes, but keep it quiet", "No, but nice try", "I can't say for sure", "Possibly", "Unlikely", "Very doubtful", "Absolutely not", "No, but maybe later", "For sure, but don't tell anyone", "No way, Jose", "I'd say yes", "I'd say no", "Chances are slim", "It's a secret", "Most likely", "You wish", "As if", "Definitely yes"]
             },
             "greetings": {
-                "triggers": {'hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'howdy', 'hiya', 'greetings', 'salutations'},
-                "responses": ["Hello", "Hi", "Hey", "Good morning", "Good afternoon", "Good evening", "Howdy", "Hiya", "Greetings", "Salutations"]
+                "triggers": {'good morning', 'good afternoon', 'hello', 'hi', 'hey', 'howdy', 'hiya', 'greetings', 'salutations'},
+                "responses": ["Hello", "Hi", "Hey", "Howdy", "Hiya", "Greetings", "Salutations"]
             },
             "goodbyes": {
-                "triggers": {'goodbye', 'bye', 'farewell', 'see you later', 'catch you later', 'take care', 'have a great day', 'until next time', 'adios', 'so long'},
-                "responses": ["Goodbye", "Bye", "Farewell", "See you later", "Catch you later", "Take care", "Have a great day", "Until next time", "Adios", "So long"]
+                "triggers": {'goodbye', 'bye', 'farewell', 'see you later', 'catch you later', 'take care', 'have a great day', 'until next time', 'adios', 'so long', 'good night'},
+                "responses": ["Goodbye", "Bye", "Farewell", "See you later", "Catch you later", "Take care", "Until next time", "Adios", "So long"]
             },
             "curse_words": {
                 "triggers": {"ass", "bitch", "bullshit", "cock", "cunt", "crap", "damn", "dammit", "dick", "dumb", "fuck", "hell", "shit", "piss", "pussy", "slut", "whore", "twat", "wanker", "bugger"},

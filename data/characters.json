@@ -93,90 +93,10 @@
     },
     "mario": {
         "possible_names": ["mario", "super mario"],
-        "url": ""
+        "url": "https://static.wikia.nocookie.net/mario/images/b/b8/Super_Mario_Run_app.png/revision/latest?cb=20230604083015"
     },
     "sonic": {
         "possible_names": ["sonic", "sonic the hedgehog"],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
-    },
-    "": {
-        "possible_names": [],
-        "url": ""
+        "url": "https://play-lh.googleusercontent.com/CvU2EiRbIpdQcGBqDinwf-J4Q4_B1M6g11P3o5ylTGsa8PGMzxdQTrSHXYjjzMOmNq4"
     }
 }
