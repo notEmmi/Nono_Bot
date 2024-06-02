@@ -4,6 +4,21 @@ from discord.ext import commands
 """
     on_message.py
     Bot responses to messages in chat
+    
+    Detail:
+    Bot responds to simple yes or no questions, along with greetings and goodbyes.
+    It also detects certain curse words and sends a warning when they are detected.
+
+    (The bots a little silly so he can be random at times :))
+
+    **Done working on FOR NOW**
+
+    For future works:
+        - Add more curse words (such as slurs)
+        - Fix warning responses AFTER ADDING MORE GAMES AND COMMANDS
+        - Fix when so bot does not respond to "him" (etc), thinking its "hi"
+        - if possible, update runtime (for learning purpose)
+            - same thing for curse words (classy == ass according to bot)
 
 """
 
@@ -48,24 +63,28 @@ class On_Message(commands.Cog):
 
         # Check for greetings
         if any(message_content.startswith(trigger) for trigger in data["greetings"]["triggers"]):
+            print(f"on_message trigger: {message_content}")
             response = random.choice(data["greetings"]["responses"])
             await message.channel.send(f"{response} {message.author.mention}!")
             return
 
         # Check for goodbyes
-        if any(message_content.startswith(trigger) for trigger in data["goodbyes"]["triggers"]):
+        elif any(message_content.startswith(trigger) for trigger in data["goodbyes"]["triggers"]):
+            print(f"on_message trigger: {message_content}")
             response = random.choice(data["goodbyes"]["responses"])
             await message.channel.send(f"{response} {message.author.mention}!")
             return
 
         # Check for questions
-        if any(message_content.startswith(trigger) for trigger in data["questions"]["triggers"]):
+        elif any(message_content.startswith(trigger) for trigger in data["questions"]["triggers"]):
+            print(f"on_message trigger: {message_content}")
             response = random.choice(data["questions"]["responses"])
             await message.channel.send(response)
             return
 
         # Check for curse words
-        if any(trigger in message_content for trigger in data["curse_words"]["triggers"]):
+        elif any(trigger in message_content for trigger in data["curse_words"]["triggers"]):
+            print(f"on_message trigger: {message_content}")
             response = random.choice(data["curse_words"]["responses"])
             await message.channel.send(f"{message.author.mention} {response}")
             return
