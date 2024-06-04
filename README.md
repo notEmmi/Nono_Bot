@@ -6,9 +6,8 @@ This is my first Discord bot. The purpose of the bot is to have multiple mini-ga
 ## Basic Commands
 **work in progress**
 1. **!help** - Provides a list of available commands.
-2. **!ping** - Checks the bot's latency.
-3. **!info** - Provides information about the bot.
-4. **!game** - Provides list of available mini games.
+2. **!info** - Provides information about the bot.
+3. **!game** - Provides list of available mini games.
 
 ## Mini Games
 
@@ -22,7 +21,8 @@ This is my first Discord bot. The purpose of the bot is to have multiple mini-ga
 
 - Add more mini-games.
 - Implement user score tracking and leaderboards.
-- Enhance the help command with more detailed descriptions and examples.
+- add roles specific to certain permissions/roles
+
 
 ### Invite Link
 
